@@ -1,30 +1,42 @@
 import React, { useState, useEffect } from "react";
 
 function App() {
-  // Aquí se declara el estado del contador y se inicializa en 0
   const [counter, setCounter] = useState(0);
 
-  // Esta función se ejecuta después de que el componente se monta y en cada actualización del contador
+  // Este efecto se ejecuta cada vez que el estado "counter" cambia
   useEffect(() => {
-    // Se declara un intervalo que se ejecutará cada 1000ms (1 segundo)
+    // Creamos un intervalo que se ejecuta cada 1000 milisegundos (1 segundo)
     const interval = setInterval(() => {
-      // Se actualiza el contador incrementándolo en 1
+      // Actualizamos el estado "counter" sumando 1 al valor actual
       setCounter(counter + 1);
     }, 1000);
-
-    // Se retorna una función que se ejecutará cuando el componente se desmonte
-    // En este caso, se limpia el intervalo para evitar fugas de memoria
+    
+    // Devolvemos una función que se ejecutará cuando el componente se desmonte o cuando se actualice "counter"
     return () => clearInterval(interval);
-  }, [counter]); // El useEffect se ejecutará cuando el valor de counter cambie
+  }, [counter]); // La dependencia es "counter" para que el efecto se vuelva a ejecutar cuando cambie este valor
 
-  // Se retorna el JSX que se mostrará en la interfaz de usuario
+  // Calculamos las horas, minutos y segundos a partir del valor de "counter"
+  const hours = Math.floor(counter / 3600);
+  const minutes = Math.floor((counter % 3600) / 60);
+  const seconds = counter % 60;
+
   return (
     <div className="container text-center">
       <div className="p-5 row ">
         <div className="col col-lg-8 text-center"></div>
-        <div className="d-flex mx-auto" >
-          {/* Se muestra el valor actual del contador */}
-          <h1>Contador: {counter}</h1>
+        <div className="d-flex mx-auto">
+          <div className="mx-3">
+            <h1>{hours < 10 ? "0" + hours : hours}</h1> {/* Si hours es menor que 10, le añadimos un cero delante */}
+            <h5>Horas</h5>
+          </div>
+          <div className="mx-3">
+            <h1>{minutes < 10 ? "0" + minutes : minutes}</h1> {/* Si minutes es menor que 10, le añadimos un cero delante */}
+            <h5>Minutos</h5>
+          </div>
+          <div className="mx-3">
+            <h1>{seconds < 10 ? "0" + seconds : seconds}</h1> {/* Si seconds es menor que 10, le añadimos un cero delante */}
+            <h5>Segundos</h5>
+          </div>
         </div>
       </div>
     </div>
