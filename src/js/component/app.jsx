@@ -16,6 +16,7 @@ function App() {
   }, [counter]); // La dependencia es "counter" para que el efecto se vuelva a ejecutar cuando cambie este valor
 
   // Calculamos los años, meses, dias, horas, minutos y segundos a partir del valor de "counter"
+
   const ano = Math.floor(counter / 31104000);
   const mes = Math.floor(counter / 2592000);
   const dia = Math.floor(counter / 86400);
@@ -25,54 +26,49 @@ function App() {
 
   return (
     <div className="container">
-        <div className="col d-flex p-5 my-5 text-bg-dark" style={{ backgroundColor: "black"}}>
-       
-       
+      <div
+        className="col d-flex p-5 my-5 text-bg-dark"
+        style={{ backgroundColor: "black" }}
+      >
         <div className="mx-3">
-            <h5><i class="fa-regular fa-clock"></i></h5>
-          </div>
- 
- 
+          <h5>
+            <i className="far fa-clock fa-4x"></i>
+            {/* Insertar el icono de reloj con tamaño 4x */}
+          </h5>
+        </div>
         <div className="mx-3">
-            <h1>{ano < 10 ? +ano : ano}</h1>{" "}
-            {/* Si ano es menor que 10, le sacamos el cero de delante */}
-            <h5>Años</h5>
-          </div>
-
-          <div className="mx-3">
-            <h1>{mes < 10 ? +mes : mes}</h1>{" "}
-            {/* Si mes es menor que 10, le sacamos el cero de delante */}
-            <h5>Meses</h5>
-          </div>
-
-          <div className="mx-3">
-            <h1>{dia < 10 ? +dia : dia}</h1>{" "}
-            {/* Si dia es menor que 10, le sacamos el cero de delante */}
-            <h5>Días</h5>
-          </div>
-          
-          <div className="mx-3">
-            <h1>{hora < 10 ? +hora : hora}</h1>{" "}
-            {/* Si hora es menor que 10, le sacamos el cero de delante */}
-            <h5>Horas</h5>
-          </div>
-
-          <div className="mx-3">
-            <h1>{minutos < 10 ? +minutos : minutos}</h1>{" "}
-            {/* Si minutos es menor que 10, le sacamos el cero de delante */}
-            <h5>Minutos</h5>
-          </div>
-
-          <div className="mx-3">
-            <h1>{segundos < 10 ? +segundos : segundos}</h1>{" "}
-            {/* Si segundos es menor que 10, le sacamos el cero de delante*/}
-            <h5>Segundos</h5>
-          </div>
-      
+          <h1>{ano < 10 ? +ano : ano}</h1>{" "}
+          {/* Si ano es menor que 10, le sacamos el cero de delante */}
+          <h5>Años</h5>
+        </div>
+        <div className="mx-3">
+          <h1>{mes < 10 ? +mes : mes}</h1>{" "}
+          {/* Si mes es menor que 10, le sacamos el cero de delante */}
+          <h5>Meses</h5>
+        </div>
+        <div className="mx-3">
+          <h1>{dia < 10 ? +dia : dia}</h1>{" "}
+          {/* Si dia es menor que 10, le sacamos el cero de delante */}
+          <h5>Días</h5>
+        </div>
+        <div className="mx-3">
+          <h1>{hora < 10 ? +hora : hora}</h1>{" "}
+          {/* Si hora es menor que 10, le sacamos el cero de delante */}
+          <h5>Horas</h5>
+        </div>
+        <div className="mx-3">
+          <h1>{minutos < 10 ? +minutos : minutos}</h1>{" "}
+          {/* Si minutos es menor que 10, le sacamos el cero de delante */}
+          <h5>Minutos</h5>
+        </div>
+        <div className="mx-3">
+          <h1>{segundos }</h1>{" "}
+          {/* Si segundos es menor que 10, le sacamos el cero de delante*/}
+          <h5>Segundos</h5>
         </div>
       </div>
+    </div>
   );
 }
 
 export default App;
-
