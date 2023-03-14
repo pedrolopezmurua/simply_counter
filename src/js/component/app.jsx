@@ -16,12 +16,12 @@ function App() {
   }, [counter]); // La dependencia es "counter" para que el efecto se vuelva a ejecutar cuando cambie este valor
 
   // Calculamos los años, meses, dias, horas, minutos y segundos a partir del valor de "counter"
-  const year = Math.floor(counter / 31104000);
-  const month = Math.floor(counter / 2592000);
-  const days = Math.floor(counter / 86400);
-  const hours = Math.floor(counter / 3600);
-  const minutes = Math.floor((counter % 3600) / 60);
-  const seconds = counter % 60;
+  const ano = Math.floor(counter / 31104000);
+  const mes = Math.floor(counter / 2592000);
+  const dia = Math.floor(counter / 86400);
+  const hora = Math.floor(counter / 3600);
+  const minutos = Math.floor((counter % 3600) / 60);
+  const segundos = counter % 60;
 
   return (
     <div className="container">
@@ -34,38 +34,38 @@ function App() {
  
  
         <div className="mx-3">
-            <h1>{year < 10 ? +year : year}</h1>{" "}
-            {/* Si year es menor que 10, le sacamos el cero de delante */}
+            <h1>{ano < 10 ? +ano : ano}</h1>{" "}
+            {/* Si ano es menor que 10, le sacamos el cero de delante */}
             <h5>Años</h5>
           </div>
 
           <div className="mx-3">
-            <h1>{month < 10 ? +month : month}</h1>{" "}
-            {/* Si month es menor que 10, le sacamos el cero de delante */}
+            <h1>{mes < 10 ? +mes : mes}</h1>{" "}
+            {/* Si mes es menor que 10, le sacamos el cero de delante */}
             <h5>Meses</h5>
           </div>
 
           <div className="mx-3">
-            <h1>{days < 10 ? +days : days}</h1>{" "}
-            {/* Si days es menor que 10, le sacamos el cero de delante */}
+            <h1>{dia < 10 ? +dia : dia}</h1>{" "}
+            {/* Si dia es menor que 10, le sacamos el cero de delante */}
             <h5>Días</h5>
           </div>
           
           <div className="mx-3">
-            <h1>{hours < 10 ? +hours : hours}</h1>{" "}
-            {/* Si hours es menor que 10, le sacamos el cero de delante */}
+            <h1>{hora < 10 ? +hora : hora}</h1>{" "}
+            {/* Si hora es menor que 10, le sacamos el cero de delante */}
             <h5>Horas</h5>
           </div>
 
           <div className="mx-3">
-            <h1>{minutes < 10 ? +minutes : minutes}</h1>{" "}
-            {/* Si minutes es menor que 10, le sacamos el cero de delante */}
+            <h1>{minutos < 10 ? +minutos : minutos}</h1>{" "}
+            {/* Si minutos es menor que 10, le sacamos el cero de delante */}
             <h5>Minutos</h5>
           </div>
 
           <div className="mx-3">
-            <h1>{seconds < 10 ? +seconds : seconds}</h1>{" "}
-            {/* Si seconds es menor que 10, le sacamos el cero de delante*/}
+            <h1>{segundos < 10 ? +segundos : segundos}</h1>{" "}
+            {/* Si segundos es menor que 10, le sacamos el cero de delante*/}
             <h5>Segundos</h5>
           </div>
       
@@ -76,30 +76,3 @@ function App() {
 
 export default App;
 
-//   // Calculamos las horas, minutos y segundos a partir del valor de "counter"
-//   const hours = Math.floor(counter / 3600);    <i class="fa-regular fa-clock"></i>
-//   const minutes = Math.floor((counter % 3600) / 60);
-//   const seconds = counter % 60;
-
-//   return (
-//     <div className="container text-center">
-//       <div className="p-5 row ">
-//         <div className="col col-lg-8 text-center"></div>
-//         <div className="d-flex mx-auto">
-//           <div className="mx-3">
-//             <h1>{hours < 10 ? "0" + hours : hours}</h1> {/* Si hours es menor que 10, le añadimos un cero delante */}
-//             <h5>Horas</h5>
-//           </div>
-//           <div className="mx-3">
-//             <h1>{minutes < 10 ? "0" + minutes : minutes}</h1> {/* Si minutes es menor que 10, le añadimos un cero delante */}
-//             <h5>Minutos</h5>
-//           </div>
-//           <div className="mx-3">
-//             <h1>{seconds < 10 ? "0" + seconds : seconds}</h1> {/* Si seconds es menor que 10, le añadimos un cero delante */}
-//             <h5>Segundos</h5>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
